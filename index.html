@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Clock</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="img/tomate.png" type="image/png">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self';"> -->
+</head>
+
+<body onload="checkSettings()">
+    <audio id="alarm" src="sounds/alarm_clock.mp3"></audio>
+
+    <div id="responsiveAside">
+        <div id="responsiveInfo">
+            <h1>What's?</h1>
+            <div id="infoTextBox">
+                <!-- <h2 id="wikiText">"Lorem Ipsum"</h2> -->
+                <h2 id="wikiTextTest">The Pomodoro Technique is a time management method developed by Francesco Cirillo
+                    in
+                    the late 1980s. It uses a kitchen timer to break work into intervals, typically 25 minutes in
+                    length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for
+                    tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <aside>
+        <div id="info">
+            <h1>What's?</h1>
+            <div id="infoTextBox">
+                <h2 id="wikiText">"Lorem Ipsum"</h2>
+                <!-- <h2 id="wikiText">The Pomodoro Technique is a time management method developed by Francesco Cirillo in
+                    the late 1980s. It uses a kitchen timer to break work into intervals, typically 25 minutes in
+                    length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for
+                    tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.</h2> -->
+            </div>
+        </div>
+
+        <div id="config">
+            <h1>Pomodoro's clock settings</h1>
+            <ul>
+                <li>
+                    <h2>Quantity of loops: </h2>
+                    <select id="loop" name="loop" onChange="checkSettings()">
+                    </select>
+                </li>
+                <li>
+                    <h2>Time of breaks:</h2>
+                    <select id="breakTime" name="breakTime" onChange="checkSettings()">
+                    </select>
+                </li>
+            </ul>
+            <!-- <li id="refreshSettings" onclick="checkSettings()">REFRESH</li> -->
+        </div>
+
+        <div id="console">
+            <h1>Console</h1>
+            <div id="textBox">
+                <h2></h2>
+                <!-- <h2></h2> -->
+            </div>
+        </div>
+    </aside>
+
+    <div id="principal">
+        <ul id="up">
+            <li onclick="alterateTime(1)">+1M</li>
+            <li onclick="alterateTime(2)">+5M</li>
+        </ul>
+
+        <!--<div id="loadSecs"></div>
+        <div id="timer">
+            <h1 id="time"></h1>
+        </div>-->
+
+        <div id="loadSecs">
+            <div id="timer">
+                <h1 id="time"></h1>
+            </div>
+        </div>
+
+        <ul id="down">
+            <li onclick="alterateTime(-1)">-1M</li>
+            <li onclick="alterateTime(-2)">-5M</li>
+        </ul>
+
+        <div id="menu">
+            <li id="start" onclick="startTime()">PLAY</li>
+            <li id="stop" onclick="stopTime()">STOP</li>
+            <li id="reset" onclick="resetTime()">RESET</li>
+        </div>
+        <div id="menu">
+            <li id="check" onclick="checkSettings()">Check</li>
+            <li id="test" onclick="testSettings()">Test</li>
+        </div>
+    </div>
+
+    <!-- <progress id="timeProgress"></progress> -->
+    <div id="progressJS">
+        <div id="progressBar"></div>
+    </div>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+
+</html>

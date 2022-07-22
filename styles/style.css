@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    color: #fff;
+}
+
+body {
+    background-color: #292929;
+    width: 100%;
+    height: auto;
+    padding-top: 2em;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#principal {
+    display: grid;
+    justify-content: space-around;
+    width: 35%;
+    height: 100%;
+    margin: auto;
+}
+
+#principal li {
+    border: 2px solid #ff9900;
+    border-radius: 0.25em;
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 10px;
+    padding: 10px 20px;
+    font-size: 2em;
+    color: #ff9900;
+}
+
+#principal li:hover {
+    background: white;
+    border: 2px solid #ff9900;
+}
+
+#principal h1 {
+    margin: auto 0;
+    text-align: center;
+    font-size: 10em;
+}
+
+#up,
+#down {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    margin: 15px auto;
+    width: 100%;
+}
+
+#timer {
+    width: 32em;
+    height: 32em;
+    border: 5px double #cfcfcf;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    animation: none;
+}
+
+#loadSecs {
+    width: 33em;
+    height: 33em;
+    border: 0.25em solid #ff9900;
+    border-radius: 50%;
+    display: flex;
+}
+
+#menu {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#menu li {
+    border-style: double;
+    border-width: 5px;
+    width: 30%;
+}
+
+#menu li:hover {
+    border-style: double;
+    border-width: 5px;
+}
+
+aside {
+    float: left;
+    clear: right;
+    height: 100%;
+    width: 25%;
+    margin: 3%;
+}
+
+#info,
+#config,
+#console {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    border: 2px solid #ff9900;
+    border-radius: 0.25em;
+    padding: 1em 3em calc(3em - 5%) 1em;
+    height: auto;
+}
+
+aside h1 {
+    margin: 0 auto;
+}
+
+aside h2 {
+    width: 8em;
+    padding-left: 1em;
+    width: 100%;
+}
+
+#config {
+    width: 100%;
+}
+
+#config li {
+    list-style: none;
+    display: flex;
+    margin: 1em auto;
+    cursor: auto;
+}
+
+#config select {
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+#console {
+    width: 100%;
+}
+
+#textBox h2 {
+    display: inline;
+    font-family: 'Inconsolata', monospace;
+}
+
+#menu #stop {
+    border-color: #e60000;
+    color: #e60000;
+}
+
+#info {
+    width: 100%;
+}
+
+#responsiveAside {
+    height: 0;
+    visibility: hidden;
+}
+
+progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: #ff9900;
+
+    color: #fff;
+}
+
+#progressJS {
+    width: 100%;
+    height: 12px;
+    background-color: #ff9900;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border: none;
+}
+
+#progressBar {
+    width: 0;
+    height: 100%;
+    background-color: #04AA6D;
+}
+
+@media (max-width: 991px) {
+
+    body {
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #info {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        padding: 0;
+    }
+
+    aside {
+        display: inline-flex;
+        float: none;
+        height: 10em;
+        width: 90%;
+        margin: 1em auto;
+        align-items: center;
+        text-align: left;
+    }
+
+    #responsiveAside {
+        float: none;
+        clear: right;
+        height: 12em;
+        width: 80%;
+        margin: 1em auto;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #ff9900;
+        border-radius: 0.25em;
+        padding: 1em 3em calc(3em - 5%) 1em;
+    }
+
+    #config,
+    #console {
+        display: block;
+        height: 100%;
+        margin: 0 1em;
+    }
+
+    #responsiveInfo>h1,
+    #config>h1,
+    #console>h2 {
+        padding-left: 0.5em;
+        font-size: 22px;
+    }
+
+    #responsiveInfo>div,
+    #config>ul,
+    #console>div {
+        font-size: 12px;
+    }
+
+    #wikiText {
+        text-align: justify;
+    }
+
+    #timer {
+        width: 23em;
+        height: 23em;
+    }
+
+    #loadSecs {
+        width: 24em;
+        height: 24em;
+    }
+
+    #principal {
+        margin-top: 1.5em;
+    }
+
+    #principal h1 {
+        margin: auto 0;
+        text-align: center;
+        font-size: 8em;
+    }
+
+    #up,
+    #down {
+        margin: 05px auto;
+    }
+
+    #principal li {
+        font-size: 1.5em;
+    }
+}
+
+/*progress::-webkit-progress-bar {
+    background-color: #fff;
+}
+  
+progress::-webkit-progress-value {
+    background-color: #fff;
+}
+
+progress::-webkit-progress-max {
+    background-color: #fff;
+}*/
